@@ -3,9 +3,33 @@
 }
 
 .hw {
-
+    /*padding: 24px;*/
+    /*position: relative;*/
+    /*border-top: 1px solid #d9d9d9;*/
+    /*border-bottom: 1px solid #d9d9d9;*/
 }
 
-.hwTitle {
+/*.hw::after {*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 1px;*/
+/*    background-color: #d9d9d9;*/
+/*    bottom: 0;*/
+/*    position: absolute;*/
+/*}*/
+/*.hw::before {*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 1px;*/
+/*    background-color: #d9d9d9;*/
+/*    top: 0;*/
+/*    position: absolute;*/
+/*}*/
 
+.hwTitle {
+    /*margin-bottom: 10px;*/
+    /*font-size: 22px;*/
+    /*font-weight: 600;*/
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*color: #000000;*/
 }

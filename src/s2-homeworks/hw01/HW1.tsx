@@ -4,6 +4,9 @@ import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
+import avatarFriend from './avatarka.png'
+import styled from "styled-components";
+
 
 /*
 * 1 - описать тип MessageType
@@ -14,48 +17,87 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+export type UserType = {
+    avatar: string,
+    name: string
+}
+
+export type MessageInType = {
+    text: string,
+    time: string
+}
+
+export type MessageType = {
+    id: number,
+    user: UserType,
+    message: MessageInType
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        name: 'Alex',  // можно менять
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
+        text: 'Hello, she didn’t do anything and rested all day, how are you?', // можно менять
         time: '22:00', // можно менять
     },
 }
+
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Friend Name', // можно менять
+        avatar: avatarFriend, // можно менять
+        name: 'Dmitry', // можно менять
     },
     message: {
-        text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:00', // можно менять
+        text: 'Hello, how are you, what did you do yesterday?', // можно менять
+        time: '22:01', // можно менять
     },
 }
 
 const HW1 = () => {
     return (
-        <div id={'hw1'}>
-            <div className={s2.hwTitle}>Homework #1</div>
-            <div className={s2.hw}>
+        <HwWrapper id={'hw1'}>
+            <Title className={s2.hwTitle}>Hometask № 1</Title>
+            <Messenger className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
-                <div>
+                <MessageContainer>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
-                </div>
+                </MessageContainer>
 
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
-            </div>
-        </div>
+            </Messenger>
+        </HwWrapper>
     )
 }
 
 export default HW1
+
+
+const HwWrapper = styled.div`
+    max-width: 1140px;
+    margin: 131px auto 35px ;
+
+`
+
+const Title = styled.div`
+    //margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+`
+
+const Messenger = styled.div`
+    //border: 1px solid #d9d9d9;
+    padding-top: 24px;
+    
+`
+const MessageContainer = styled.div`
+    
+`
