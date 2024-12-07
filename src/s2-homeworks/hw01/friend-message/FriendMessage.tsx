@@ -1,5 +1,4 @@
 import React from 'react'
-import s from './FriendMessage.module.css'
 import {MessageType} from "../HW1";
 import styled from "styled-components";
 
@@ -12,19 +11,17 @@ const FriendMessage = (props: FriendMessagePropsType) => {
     return (
         <FriendMessageWrapper
             id={'hw1-friend-message-' + props.message.id}
-            className={s.friendMessage}
         >
-            <FriendImageAndText className={s.friendImageAndText}>
+            <FriendImageAndText>
                 <Avatar
                     id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
                     src={props.message.user.avatar}
                     //
                 />
-                <FriendText className={s.friendText}>
+                <FriendText>
                     <FriendName
                         id={'hw1-friend-name-' + props.message.id}
-                        className={s.friendName}
                     >
                         {/*создаёт студент*/}
                         {props.message.user.name}
@@ -32,7 +29,6 @@ const FriendMessage = (props: FriendMessagePropsType) => {
                     </FriendName>
                     <FriendMessageText
                         id={'hw1-friend-text-' + props.message.id}
-                        className={s.friendMessageText}
                     >
                         {/*создаёт студент*/}
                         {props.message.message.text}
@@ -42,7 +38,6 @@ const FriendMessage = (props: FriendMessagePropsType) => {
             </FriendImageAndText>
             <FriendTime
                 id={'hw1-friend-time-' + props.message.id}
-                className={s.friendTime}
             >
                 {/*создаёт студент*/}
                 {props.message.message.time}

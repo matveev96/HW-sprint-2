@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { message0 } from '../HW1'
-import s from './MessageSender.module.css'
 import styled from "styled-components";
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
@@ -46,10 +45,9 @@ const MessageSender = (props: any) => {
                 <M key={'message' + m.id} message={m} />
             ))}
 
-            <Sender id={'hw1-send-message-form'} className={s.sendForm}>
+            <Sender id={'hw1-send-message-form'}>
                 <Textarea
                     id={'hw1-textarea'}
-                    className={s.textarea}
                     ref={textareaRef}
 
                     title={'Shift+Enter for send'}
@@ -61,8 +59,6 @@ const MessageSender = (props: any) => {
                 />
                 <Button
                     id={'hw1-button'}
-                    className={s.button}
-
                     onClick={addMessage}
                 >
                     {/*текст кнопки могут изменить студенты*/}

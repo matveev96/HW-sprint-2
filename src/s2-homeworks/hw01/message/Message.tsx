@@ -11,28 +11,28 @@ export type MessagePropsType = {
 // нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
     return (
-        <MessageWrapper id={'hw1-message-' + props.message.id} className={s.message}>
-            <ImageAndText className={s.imageAndText}>
+        <MessageWrapper id={'hw1-message-' + props.message.id} >
+            <ImageAndText >
                 <Avatar
                     id={'hw1-avatar-' + props.message.id}
                     // создаёт студент
                     src={props.message.user.avatar}
                     //
                 />
-                <Text className={s.text}>
-                    <Name id={'hw1-name-' + props.message.id} className={s.name}>
+                <Text>
+                    <Name id={'hw1-name-' + props.message.id}>
                         {/*создаёт студент*/}
                         {props.message.user.name}
                         {/**/}
                     </Name>
-                    <MessageText id={'hw1-text-' + props.message.id} className={s.messageText}>
+                    <MessageText id={'hw1-text-' + props.message.id}>
                         {/*создаёт студент*/}
                         {props.message.message.text}
                         {/**/}
                     </MessageText>
                 </Text>
             </ImageAndText>
-            <Time id={'hw1-time-' + props.message.id} className={s.time}>
+            <Time id={'hw1-time-' + props.message.id}>
                 {/*создаёт студент*/}
                 {props.message.message.time}
                 {/**/}

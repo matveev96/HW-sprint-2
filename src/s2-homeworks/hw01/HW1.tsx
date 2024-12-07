@@ -1,7 +1,6 @@
 import React from 'react'
 import Message from './message/Message'
 import MessageSender from './message-sender/MessageSender'
-import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
 import avatarFriend from './avatarka.png'
@@ -61,8 +60,8 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <HwWrapper id={'hw1'}>
-            <Title className={s2.hwTitle}>Hometask № 1</Title>
-            <Messenger className={s2.hw}>
+            <Title>Hometask № 1</Title>
+            <Messenger>
                 {/*проверка отображения (не менять)*/}
                 <MessageContainer>
                     <Message message={message0} />
@@ -86,7 +85,6 @@ const HwWrapper = styled.div`
 `
 
 const Title = styled.div`
-    //margin-bottom: 10px;
     font-size: 22px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
@@ -94,7 +92,6 @@ const Title = styled.div`
 `
 
 const Messenger = styled.div`
-    //border: 1px solid #d9d9d9;
     padding-top: 24px;
     
 `

@@ -1,11 +1,10 @@
 import React from 'react'
-import s from './App.module.css'
 import HW1 from '../s2-homeworks/hw01/HW1'
 import styled from "styled-components";
 
 function App() {
     return (
-        <AppStyle className={s.App}>
+        <AppStyle>
             <HW1/>
             {/*раскомментировать по ходу выполнения*/}
             {/*<HW2/>*/}
