@@ -4,7 +4,7 @@ import MessageSender from './message-sender/MessageSender'
 import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
 import avatarFriend from './avatarka.png'
-import styled from "styled-components";
+import {S} from "../../s1-main/AppStyles";
 
 
 /*
@@ -59,42 +59,21 @@ export const friendMessage0: MessageType = {
 
 const HW1 = () => {
     return (
-        <HwWrapper id={'hw1'}>
-            <Title>Hometask № 1</Title>
-            <Messenger>
+        <S.HwWrapper id={'hw1'}>
+            <S.Title>Hometask № 1</S.Title>
+            <S.ContentWrapper>
                 {/*проверка отображения (не менять)*/}
-                <MessageContainer>
+                <div>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
-                </MessageContainer>
+                </div>
 
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
-            </Messenger>
-        </HwWrapper>
+            </S.ContentWrapper>
+        </S.HwWrapper>
     )
 }
 
 export default HW1
 
-
-const HwWrapper = styled.div`
-    max-width: 1140px;
-    margin: 131px auto 35px ;
-
-`
-
-const Title = styled.div`
-    font-size: 22px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-`
-
-const Messenger = styled.div`
-    padding-top: 24px;
-    
-`
-const MessageContainer = styled.div`
-    
-`
