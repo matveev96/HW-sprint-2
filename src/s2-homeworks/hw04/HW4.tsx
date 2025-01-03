@@ -1,5 +1,6 @@
 import React from 'react'
 import s2 from '../../s1-main/App.module.css'
+import { S } from '../../s1-main/AppStyles'
 import Stand from './Stand'
 
 /*
@@ -11,13 +12,13 @@ import Stand from './Stand'
 
 const HW4 = () => {
     return (
-        <div id={'hw4'}>
-            <div className={s2.hwTitle}>Homework #4</div>
+        <S.HwWrapper id={'hw4'}>
+            <S.Title className={s2.hwTitle}>Homework №4</S.Title>
             {/*демонстрация возможностей компонент:*/}
-            <div className={s2.hw}>
+            <S.ContentWrapper className={s2.hw}>
                 <Stand />
-            </div>
-        </div>
+            </S.ContentWrapper>
+        </S.HwWrapper>
     )
 }
 
