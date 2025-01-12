@@ -4,6 +4,7 @@ import { restoreState, saveState } from './localStorage/localStorage'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
+import { S } from '../../s1-main/AppStyles'
 
 /*
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций onEnterCallback, onBlurCallback, onDoubleClickCallBack
@@ -13,21 +14,22 @@ import s from './HW6.module.css'
 
 const HW6 = () => {
     const [value, setValue] = useState<string>('')
-
+    console.log(value)
     const save = () => {
         saveState<string>('hw6-editable-span-value', value)
     }
     const restore = () => {
         // делают студенты
+        setValue(restoreState<string>('hw6-editable-span-value', 'localStorage is empty'))
 
     }
 
     return (
-        <div id={'hw6'}>
-            <div className={s2.hwTitle}>Homework #6</div>
+        <S.HwWrapper id={'hw6'}>
+            <S.Title className={s2.hwTitle}>Homework #6</S.Title>
 
             {/*демонстрация возможностей компоненты:*/}
-            <div className={s2.hw}>
+            <S.ContentWrapper className={s2.hw}>
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
@@ -35,25 +37,25 @@ const HW6 = () => {
                         onChangeText={setValue}
                         spanProps={{
                             id: 'hw6-editable-span',
-                            defaultText: 'enter text...',
+                            defaultText: 'Edit text',
                         }}
                     />
                 </div>
 
                 <div className={s.buttonsContainer}>
                     <SuperButton id={'hw6-save'} onClick={save}>
-                        Save to ls
+                        Save to LocalStorage
                     </SuperButton>
                     <SuperButton
                         id={'hw6-restore'}
                         onClick={restore}
                         xType={'secondary'}
                     >
-                        Get from ls
+                        Get from LocalStorage
                     </SuperButton>
                 </div>
-            </div>
-        </div>
+            </S.ContentWrapper>
+        </S.HwWrapper>
     )
 }
 
