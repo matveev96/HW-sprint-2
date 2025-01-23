@@ -26,7 +26,7 @@ const HW6 = () => {
 
     return (
         <S.HwWrapper id={'hw6'}>
-            <S.Title className={s2.hwTitle}>Homework #6</S.Title>
+            <S.Title className={s2.hwTitle}>Hometask №6</S.Title>
 
             {/*демонстрация возможностей компоненты:*/}
             <S.ContentWrapper className={s2.hw}>
