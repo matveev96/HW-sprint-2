@@ -4,6 +4,7 @@ import s from './HW8.module.css'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import User from './User'
+import { S } from '../../s1-main/AppStyles'
 
 /*
 * 1 - дописать типы и логику (сортировка по имени, фильтрация по совершеннолетию) homeWorkReducer, проверить тестом
@@ -21,7 +22,7 @@ const initialPeople: UserType[] = [
     // студенты могут поменять имя/возраст/количество объектов, _id должны быть целочисленные
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
-    {_id: 2, name: 'Коля', age: 16},
+    {_id: 2, name: 'Коля', age: 17},
     {_id: 3, name: 'Виктор', age: 44},
     {_id: 4, name: 'Дмитрий', age: 40},
     {_id: 5, name: 'Ирина', age: 55},
@@ -54,9 +55,9 @@ const HW8 = () => {
     }
 
     return (
-        <div id={'hw3'}>
-            <div className={s2.hwTitle}>Homework #8</div>
-            <div className={s2.hw}>
+        <S.HwWrapper id={'hw3'}>
+            <S.Title className={s2.hwTitle}>Hometask №8</S.Title>
+            <S.ContentWrapper className={s2.hw}>
                 <div className={s.container}>
                     <div className={s.buttonsContainer}>
                         <SuperButton
@@ -85,7 +86,7 @@ const HW8 = () => {
                     <table id={'hw8-users'} className={s.users}>
                         <thead className={s.thead}>
                         <tr>
-                            <td className={s.nameCol}>Name</td>
+                            <td className={s.nameCol}>Full name</td>
                             <td className={s.ageCol}>Age</td>
                         </tr>
                         </thead>
@@ -93,8 +94,8 @@ const HW8 = () => {
                         <tbody>{finalPeople}</tbody>
                     </table>
                 </div>
-            </div>
-        </div>
+            </S.ContentWrapper>
+        </S.HwWrapper>
     )
 }
 
