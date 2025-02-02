@@ -56,4 +56,6 @@
 
 .button:disabled {
     cursor: not-allowed;
+    background: #06c;
+    opacity: 0.4;
 }
