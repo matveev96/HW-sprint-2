@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const HwWrapper = styled.div`
     max-width: 1140px;
-    margin: 0 auto  ;
+    margin: 0 auto;
     padding: 40px 0;
-    &::before, 
+
+    &::before,
     &::after {
         content: "";
         position: absolute;
@@ -12,7 +13,7 @@ const HwWrapper = styled.div`
         left: 0;
         right: 0;
         height: 1px;
-        background-color:#d9d9d9;
+        background-color: #d9d9d9;
     }
 `
 
@@ -23,9 +24,12 @@ const Title = styled.div`
     color: #000000;
 `
 
-const ContentWrapper = styled.div`
+type ContentWrapperProps = { width?: string; }
+
+const ContentWrapper = styled.div<ContentWrapperProps>`
     padding-top: 24px;
-`
+    width: ${({width}) => width || 'auto'}; // Если пропс width передан, используем его, иначе ставим 'auto'
+`;
 
 export const S = {
     HwWrapper,
