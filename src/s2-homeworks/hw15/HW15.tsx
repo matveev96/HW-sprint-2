@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import { S } from '../../s1-main/AppStyles'
 
 /*
 * 1 - дописать SuperPagination
@@ -52,9 +53,12 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
                 // сохранить пришедшие данные
-
+                if(res?.data) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
+                setLoading(false)
                 //
             })
     }
@@ -63,11 +67,13 @@ const HW15 = () => {
         // делает студент
 
         // setPage(
+        setPage(newPage)
         // setCount(
-
+        setCount(newCount)
         // sendQuery(
+        sendQuery({page: newPage, count: newCount})
         // setSearchParams(
-
+        setSearchParams({page: newPage.toString(), count: newCount.toString()})
         //
     }
 
@@ -75,11 +81,13 @@ const HW15 = () => {
         // делает студент
 
         // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
+        sendQuery({page: page, count: count, sort: newSort})
         // setSearchParams(
-
+        setSearchParams({page: page.toString(), count: count.toString(), sort: newSort})
         //
     }
 
@@ -103,11 +111,12 @@ const HW15 = () => {
     ))
 
     return (
-        <div id={'hw15'}>
-            <div className={s2.hwTitle}>Homework #15</div>
+        <S.HwWrapper id={'hw15'}>
+            <S.Title className={s2.hwTitle}>Hometask №15</S.Title>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+            <S.ContentWrapper className={`${idLoading && s.hw15}`}>
+
+                {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
 
                 <SuperPagination
                     page={page}
@@ -129,8 +138,8 @@ const HW15 = () => {
                 </div>
 
                 {mappedTechs}
-            </div>
-        </div>
+            </S.ContentWrapper>
+        </S.HwWrapper>
     )
 }
 
