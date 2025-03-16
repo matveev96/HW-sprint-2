@@ -29,6 +29,7 @@ type ContentWrapperProps = { width?: string; }
 const ContentWrapper = styled.div<ContentWrapperProps>`
     padding-top: 24px;
     width: ${({width}) => width || 'auto'}; // Если пропс width передан, используем его, иначе ставим 'auto'
+    position: relative;
 `;
 
 export const S = {
